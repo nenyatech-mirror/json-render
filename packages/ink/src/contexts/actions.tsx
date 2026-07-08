@@ -280,9 +280,8 @@ export function ActionProvider({
           handler,
           setState: set,
           navigate: navigateRef.current,
-          executeAction: async (name) => {
-            const subBinding: ActionBinding = { action: name };
-            await execute(subBinding);
+          executeAction: async (binding) => {
+            await execute(binding);
           },
         });
       } finally {

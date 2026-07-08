@@ -304,9 +304,8 @@
             handler,
             setState: stateCtx.set,
             navigate,
-            executeAction: async (name) => {
-              const subBinding: CoreActionBinding = { action: name };
-              await execute(subBinding);
+            executeAction: async (binding) => {
+              await execute(binding);
             },
           });
         } finally {
@@ -322,9 +321,8 @@
         handler,
         setState: stateCtx.set,
         navigate,
-        executeAction: async (name) => {
-          const subBinding: CoreActionBinding = { action: name };
-          await execute(subBinding);
+        executeAction: async (binding) => {
+          await execute(binding);
         },
       });
     } finally {

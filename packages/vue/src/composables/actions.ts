@@ -287,9 +287,8 @@ export const ActionProvider = defineComponent({
               handler,
               setState: set,
               navigate: props.navigate,
-              executeAction: async (name) => {
-                const subBinding: ActionBinding = { action: name };
-                await execute(subBinding);
+              executeAction: async (binding) => {
+                await execute(binding);
               },
             });
           } finally {
@@ -310,9 +309,8 @@ export const ActionProvider = defineComponent({
             handler,
             setState: set,
             navigate: props.navigate,
-            executeAction: async (name) => {
-              const subBinding: ActionBinding = { action: name };
-              await execute(subBinding);
+            executeAction: async (binding) => {
+              await execute(binding);
             },
           });
         } finally {

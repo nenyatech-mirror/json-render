@@ -174,9 +174,8 @@ export function ActionProvider({
               handler,
               setState: set,
               navigate,
-              executeAction: async (name) => {
-                const subBinding: ActionBinding = { action: name };
-                await execute(subBinding);
+              executeAction: async (binding) => {
+                await execute(binding);
               },
             });
           } finally {
@@ -196,9 +195,8 @@ export function ActionProvider({
           handler,
           setState: set,
           navigate,
-          executeAction: async (name) => {
-            const subBinding: ActionBinding = { action: name };
-            await execute(subBinding);
+          executeAction: async (binding) => {
+            await execute(binding);
           },
         });
       } finally {
